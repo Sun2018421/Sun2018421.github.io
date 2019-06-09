@@ -159,6 +159,70 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ClosestPoint" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/09/ClosestPoint/">最近对问题</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/09/ClosestPoint/" class="archive-article-date">
+  	<time datetime="2019-06-09T03:04:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;math.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">struct point&#123;</span><br><span class="line">    int x ,y;</span><br><span class="line">&#125;;</span><br><span class="line">double Distance(point a , point b)&#123;</span><br><span class="line">    return sqrt((a.x-b.x)*(a.x-b.x)+(a.y-b.y)*(a.y-b.y));</span><br><span class="line">&#125;</span><br><span class="line">double Closest(point S[],int low ,int high)&#123;</span><br><span class="line">    double d1 , d2 , d3 ,d;</span><br><span class="line">    int mid , i , j , index;</span><br><span class="line">    point P[n];</span><br><span class="line">    if(high - low == 1)</span><br><span class="line">        return Distance(S[low],S[high]);</span><br><span class="line">    if(high-low==2)&#123;</span><br><span class="line">        d1 = Distance(S[low],S[low+1]);</span><br><span class="line">        d2 = Distance(S[low+1],S[high]);</span><br><span class="line">        d3 = Distance(S[low],S[high]);</span><br><span class="line">        if((d1&lt;d2)&amp;&amp;(d1&lt;d3))</span><br><span class="line">            return d1;</span><br><span class="line">        else if (d2&lt;d3) return d2;</span><br><span class="line">        else return d3;</span><br><span class="line">    &#125;</span><br><span class="line">    mid = (low+high)/2;</span><br><span class="line">    d1 = Closest(S,low,mid);</span><br><span class="line">    d2 = Closest(S,mid+1,high);</span><br><span class="line">    if(d1&lt;= d2) d=d1;</span><br><span class="line">    else d = d2;</span><br><span class="line">    index = 0 ;</span><br><span class="line">    for(i = mid ; (i&gt;=low)&amp;&amp;(S[mid].x-S[i].x&lt;d);i--)&#123;</span><br><span class="line">        P[index++] = S[i];</span><br><span class="line">    &#125;</span><br><span class="line">    for(i = mid + 1 ; (i&lt;=high)&amp;&amp;(S[i].x-S[mid].x&lt;d) ; i++)&#123;</span><br><span class="line">        P[index++] = S[i];</span><br><span class="line">    &#125;</span><br><span class="line">    QuickSort(P,0,index-1);//对集合P1和P2按y坐标升序排列</span><br><span class="line">    for(i = 0 ; i&lt; index ; i++)&#123;</span><br><span class="line">        for(j = i +1 ; j&lt;index ; j++)&#123;</span><br><span class="line">            if(P[j].y-P[i].y &gt;=d)</span><br><span class="line">                break;</span><br><span class="line">            else&#123;</span><br><span class="line">                d3 = Distance(P[i],P[j]);</span><br><span class="line">                if(d3&lt;d)    d = d3;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/09/ClosestPoint/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MaxSum" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
