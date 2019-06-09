@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="sunxiaofeng.xyz">
-  <title>最近对问题 | 孙啸峰的博客</title>
+  <title>三角剖分 | 孙啸峰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include &amp;lt;iostream&amp;gt;#include &amp;lt;math.h&amp;gt;using namespace std;struct point&amp;#123;    int x ,y;&amp;#125;;dou">
+  <meta name="description" content="123456789101112131415161718void MinWeighTriangulation(int n , int **m , int **s)&amp;#123;    for(int i = 1 ; i&amp;lt;= n ;i++)            t[i][i] = 0;    //t[i][j] =&amp;gt; &amp;#123;vi-1 , vi , ... , vj&amp;#125;">
+<meta name="keywords" content="dp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最近对问题">
-<meta property="og:url" content="sunxiaofeng.xyz/2019/06/09/ClosestPoint/index.html">
+<meta property="og:title" content="三角剖分">
+<meta property="og:url" content="sunxiaofeng.xyz/2019/06/09/三角剖分/index.html">
 <meta property="og:site_name" content="孙啸峰的博客">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include &amp;lt;iostream&amp;gt;#include &amp;lt;math.h&amp;gt;using namespace std;struct point&amp;#123;    int x ,y;&amp;#125;;dou">
+<meta property="og:description" content="123456789101112131415161718void MinWeighTriangulation(int n , int **m , int **s)&amp;#123;    for(int i = 1 ; i&amp;lt;= n ;i++)            t[i][i] = 0;    //t[i][j] =&amp;gt; &amp;#123;vi-1 , vi , ... , vj&amp;#125;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-09T03:04:58.227Z">
+<meta property="og:updated_time" content="2019-06-09T10:42:47.083Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="最近对问题">
-<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include &amp;lt;iostream&amp;gt;#include &amp;lt;math.h&amp;gt;using namespace std;struct point&amp;#123;    int x ,y;&amp;#125;;dou">
+<meta name="twitter:title" content="三角剖分">
+<meta name="twitter:description" content="123456789101112131415161718void MinWeighTriangulation(int n , int **m , int **s)&amp;#123;    for(int i = 1 ; i&amp;lt;= n ;i++)            t[i][i] = 0;    //t[i][j] =&amp;gt; &amp;#123;vi-1 , vi , ... , vj&amp;#125;">
   
     <link rel="alternative" href="/atom.xml" title="孙啸峰的博客" type="application/atom+xml">
   
@@ -158,29 +159,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ClosestPoint" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-三角剖分" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      最近对问题
+      三角剖分
     </h1>
   
 
         
-        <a href="/2019/06/09/ClosestPoint/" class="archive-article-date">
-  	<time datetime="2019-06-09T03:04:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-09</time>
+        <a href="/2019/06/09/三角剖分/" class="archive-article-date">
+  	<time datetime="2019-06-09T10:41:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;math.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">struct point&#123;</span><br><span class="line">    int x ,y;</span><br><span class="line">&#125;;</span><br><span class="line">double Distance(point a , point b)&#123;</span><br><span class="line">    return sqrt((a.x-b.x)*(a.x-b.x)+(a.y-b.y)*(a.y-b.y));</span><br><span class="line">&#125;</span><br><span class="line">double Closest(point S[],int low ,int high)&#123;</span><br><span class="line">    double d1 , d2 , d3 ,d;</span><br><span class="line">    int mid , i , j , index;</span><br><span class="line">    point P[n];</span><br><span class="line">    if(high - low == 1)</span><br><span class="line">        return Distance(S[low],S[high]);</span><br><span class="line">    if(high-low==2)&#123;</span><br><span class="line">        d1 = Distance(S[low],S[low+1]);</span><br><span class="line">        d2 = Distance(S[low+1],S[high]);</span><br><span class="line">        d3 = Distance(S[low],S[high]);</span><br><span class="line">        if((d1&lt;d2)&amp;&amp;(d1&lt;d3))</span><br><span class="line">            return d1;</span><br><span class="line">        else if (d2&lt;d3) return d2;</span><br><span class="line">        else return d3;</span><br><span class="line">    &#125;</span><br><span class="line">    mid = (low+high)/2;</span><br><span class="line">    d1 = Closest(S,low,mid);</span><br><span class="line">    d2 = Closest(S,mid+1,high);</span><br><span class="line">    if(d1&lt;= d2) d=d1;</span><br><span class="line">    else d = d2;</span><br><span class="line">    index = 0 ;</span><br><span class="line">    for(i = mid ; (i&gt;=low)&amp;&amp;(S[mid].x-S[i].x&lt;d);i--)&#123;</span><br><span class="line">        P[index++] = S[i];</span><br><span class="line">    &#125;</span><br><span class="line">    for(i = mid + 1 ; (i&lt;=high)&amp;&amp;(S[i].x-S[mid].x&lt;d) ; i++)&#123;</span><br><span class="line">        P[index++] = S[i];</span><br><span class="line">    &#125;</span><br><span class="line">    QuickSort(P,0,index-1);//对集合P1和P2按y坐标升序排列</span><br><span class="line">    for(i = 0 ; i&lt; index ; i++)&#123;</span><br><span class="line">        for(j = i +1 ; j&lt;index ; j++)&#123;</span><br><span class="line">            if(P[j].y-P[i].y &gt;=d)</span><br><span class="line">                break;</span><br><span class="line">            else&#123;</span><br><span class="line">                d3 = Distance(P[i],P[j]);</span><br><span class="line">                if(d3&lt;d)    d = d3;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">void MinWeighTriangulation(int n , int **m , int **s)&#123;</span><br><span class="line">    <span class="keyword">for</span>(int i = 1 ; i&lt;= n ;i++)</span><br><span class="line">            t[i][i] = 0;    //t[i][j] =&gt; &#123;vi-1 , vi , ... , vj&#125;</span><br><span class="line">    <span class="keyword">for</span>(int r = 2 ; r &lt;= n ; r++)&#123;  //步长</span><br><span class="line">        <span class="keyword">for</span>(int i = 1 ; i&lt;= n-r+1 ; i++)&#123;</span><br><span class="line">            int j = i+r-1;  //vi-1,...,vj</span><br><span class="line">            t[i][j]= t[i+1][j] + w(i-1,i,j); //初始以vi点分割</span><br><span class="line">            s[i][j] = i;</span><br><span class="line">            <span class="keyword">for</span>(int k = i + 1 ; k&lt;j;k++)&#123;</span><br><span class="line">                int u = t[i][k] +t[k+1][j] + w(i-1,k,j);</span><br><span class="line">                <span class="keyword">if</span>(u&lt;t[i][j])&#123;</span><br><span class="line">                    t[i][j] = u ;</span><br><span class="line">                    s[i][j] = k ;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -209,6 +208,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">dp</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -259,7 +269,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:sunxiaofeng.xyz/2019/06/09/ClosestPoint/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:sunxiaofeng.xyz/2019/06/09/三角剖分/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -273,18 +283,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/06/09/RandomizedSelect/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          RandomizedSelect
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/06/08/MaxSum/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">MaxSum</div>
+    <a href="/2019/06/09/IncreaseOrder/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">IncreaseOrder</div>
       <i class="icon-circle-right"></i>
     </a>
   
