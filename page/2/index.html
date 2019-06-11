@@ -159,6 +159,70 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-MergeSort" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/08/MergeSort/">MergeSort</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/08/MergeSort/" class="archive-article-date">
+  	<time datetime="2019-06-08T06:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;iostream&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int data[1001];</span><br><span class="line">void Merge(int r[] , int r1[] , int s , int m ,int t)&#123;</span><br><span class="line">    int i = s , j = m+1 , k= s;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=m &amp;&amp; j &lt;=t)&#123;</span><br><span class="line">        <span class="keyword">if</span>(r[i] &lt;= r[j])&#123;</span><br><span class="line">            r1[k++] = r[i++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            r1[k++] = r[j++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;= m )&#123;</span><br><span class="line">        r1[k++] = r[i++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(j&lt;=t)&#123;</span><br><span class="line">        r1[k++] = r[j++];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">void MergeSort(int r[] , int s ,int t)&#123;</span><br><span class="line">    int m ;</span><br><span class="line">    int r1[1000] = &#123;0&#125;;</span><br><span class="line">    <span class="keyword">if</span>(s==t)&#123;</span><br><span class="line">        <span class="built_in">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        m = (s+t)/2;</span><br><span class="line">        MergeSort(r,s,m);</span><br><span class="line">        MergeSort(r,m+1,t);</span><br><span class="line">        Merge(r , r1 , s , m , t);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(int i = s ; i&lt;= t ;i++)</span><br><span class="line">        r[i] = r1[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">    int n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(int i = 1 ; i&lt;=n ; i++)</span><br><span class="line">        cin&gt;&gt;data[i];</span><br><span class="line">    MergeSort(data,1,n);</span><br><span class="line">    <span class="keyword">for</span>(int i = 1 ; i&lt;= n ; i++)</span><br><span class="line">            cout&lt;&lt;data[i]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">return</span> 0 ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/08/MergeSort/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-RotationMatrix" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -458,6 +522,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">DP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">回溯法</a>
               </li>
              
               <li class="article-tag-list-item">
