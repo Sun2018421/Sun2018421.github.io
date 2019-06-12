@@ -159,6 +159,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-布线问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/12/布线问题/">布线问题</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/12/布线问题/" class="archive-article-date">
+  	<time datetime="2019-06-12T12:14:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include &lt;queue&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">struct Position&#123;</span><br><span class="line">    int row ;</span><br><span class="line">    int col ;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Position offset[4] = &#123;&#123;0,1&#125;,&#123;1,0&#125;,&#123;0,-1&#125;,&#123;-1,0&#125;&#125;;</span><br><span class="line">int grid[9][9] = &#123;&#123;1,1,1,1,1,1,1,1,1&#125;,</span><br><span class="line">                  &#123;1,0,0,1,0,0,0,0,1&#125;,</span><br><span class="line">                  &#123;1,0,0,1,1,0,0,0,1&#125;,</span><br><span class="line">                  &#123;1,0,0,0,0,1,0,0,1&#125;,</span><br><span class="line">                  &#123;1,0,0,0,1,1,0,0,1&#125;,</span><br><span class="line">                  &#123;1,1,0,0,0,1,0,0,1&#125;,</span><br><span class="line">                  &#123;1,1,1,1,0,0,0,0,1&#125;,</span><br><span class="line">                  &#123;1,1,1,1,0,0,0,0,1&#125;,</span><br><span class="line">                  &#123;1,1,1,1,1,1,1,1,1,&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">bool BUXIAN(Position start , Position finish)&#123;</span><br><span class="line">    queue&lt;Position&gt; a ;</span><br><span class="line">    a.push(start);</span><br><span class="line">    Position here  , temp;</span><br><span class="line">    <span class="keyword">do</span>&#123;</span><br><span class="line">        here = a.front();</span><br><span class="line">        <span class="keyword">for</span>(int i = 0 ; i&lt; 4 ; i++)&#123;</span><br><span class="line">            temp.row = here.row + offset[i].row;</span><br><span class="line">            temp.col = here.col + offset[i].col;</span><br><span class="line">            <span class="keyword">if</span>(grid[temp.row][temp.col] == 0)&#123;</span><br><span class="line">                grid[temp.row][temp.col] = grid[here.row][here.col] + 1;</span><br><span class="line">                <span class="keyword">if</span>(temp.row == finish.row &amp;&amp; temp.col == finish.col)&#123;<span class="built_in">break</span>;&#125;</span><br><span class="line">                a.push(temp);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(temp.row == finish.row &amp;&amp; temp.col == finish.col)&#123;<span class="built_in">break</span>;&#125;</span><br><span class="line">        <span class="keyword">if</span>(a.empty())</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        a.pop();</span><br><span class="line">    &#125;<span class="keyword">while</span>(<span class="literal">true</span>);</span><br><span class="line">    int Pathlen = grid[finish.row][finish.col] - 1;</span><br><span class="line">    Position *path = new Position[Pathlen];</span><br><span class="line">    here = finish;</span><br><span class="line">    <span class="keyword">for</span>(int j  = Pathlen-1 ; j&gt;= 0 ; j--)&#123;</span><br><span class="line">        path[j] = here;</span><br><span class="line">        <span class="keyword">for</span>(int i = 0 ; i &lt; 4 ; i++)&#123;</span><br><span class="line">            temp.row = here.row+offset[i].row;</span><br><span class="line">            temp.col = here.col + offset[i].col;</span><br><span class="line">            <span class="keyword">if</span>(grid[temp.row][temp.col] == j+1)&#123;</span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        here = temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(int i = 1 ; i&lt;= 7 ; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(int j = 1 ; j&lt;= 7 ; j++)</span><br><span class="line">            cout&lt;&lt;grid[i][j]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">   cout&lt;&lt;<span class="string">"len: "</span> &lt;&lt;Pathlen&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">for</span>(int i = 0 ; i&lt;Pathlen ; i++)</span><br><span class="line">        cout&lt;&lt;path[i].row &lt;&lt;<span class="string">" "</span>&lt;&lt;path[i].col&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">   // <span class="keyword">for</span>(int i = 0 ; i&lt;4 ; i++)</span><br><span class="line">    //    cout&lt;&lt;offset[i].row &lt;&lt;<span class="string">" "</span>&lt;&lt;offset[i].col&lt;&lt;endl;</span><br><span class="line">    Position start , finish;</span><br><span class="line">    start.row = 3 ;</span><br><span class="line">    start.col = 2;</span><br><span class="line">    finish.row = 4;</span><br><span class="line">    finish.col = 6;</span><br><span class="line">    grid[start.row][start.col] = 2;</span><br><span class="line">    BUXIAN(start , finish);</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">stl</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">branch and bound method</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/12/布线问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Bubble" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -804,70 +881,6 @@
 
 
   
-    <article id="post-ClosestPoint" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/09/ClosestPoint/">最近对问题</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/09/ClosestPoint/" class="archive-article-date">
-  	<time datetime="2019-06-09T03:04:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;math.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">struct point&#123;</span><br><span class="line">    int x ,y;</span><br><span class="line">&#125;;</span><br><span class="line">double Distance(point a , point b)&#123;</span><br><span class="line">    return sqrt((a.x-b.x)*(a.x-b.x)+(a.y-b.y)*(a.y-b.y));</span><br><span class="line">&#125;</span><br><span class="line">double Closest(point S[],int low ,int high)&#123;</span><br><span class="line">    double d1 , d2 , d3 ,d;</span><br><span class="line">    int mid , i , j , index;</span><br><span class="line">    point P[n];</span><br><span class="line">    if(high - low == 1)</span><br><span class="line">        return Distance(S[low],S[high]);</span><br><span class="line">    if(high-low==2)&#123;</span><br><span class="line">        d1 = Distance(S[low],S[low+1]);</span><br><span class="line">        d2 = Distance(S[low+1],S[high]);</span><br><span class="line">        d3 = Distance(S[low],S[high]);</span><br><span class="line">        if((d1&lt;d2)&amp;&amp;(d1&lt;d3))</span><br><span class="line">            return d1;</span><br><span class="line">        else if (d2&lt;d3) return d2;</span><br><span class="line">        else return d3;</span><br><span class="line">    &#125;</span><br><span class="line">    mid = (low+high)/2;</span><br><span class="line">    d1 = Closest(S,low,mid);</span><br><span class="line">    d2 = Closest(S,mid+1,high);</span><br><span class="line">    if(d1&lt;= d2) d=d1;</span><br><span class="line">    else d = d2;</span><br><span class="line">    index = 0 ;</span><br><span class="line">    for(i = mid ; (i&gt;=low)&amp;&amp;(S[mid].x-S[i].x&lt;d);i--)&#123;</span><br><span class="line">        P[index++] = S[i];</span><br><span class="line">    &#125;</span><br><span class="line">    for(i = mid + 1 ; (i&lt;=high)&amp;&amp;(S[i].x-S[mid].x&lt;d) ; i++)&#123;</span><br><span class="line">        P[index++] = S[i];</span><br><span class="line">    &#125;</span><br><span class="line">    QuickSort(P,0,index-1);//对集合P1和P2按y坐标升序排列</span><br><span class="line">    for(i = 0 ; i&lt; index ; i++)&#123;</span><br><span class="line">        for(j = i +1 ; j&lt;index ; j++)&#123;</span><br><span class="line">            if(P[j].y-P[i].y &gt;=d)</span><br><span class="line">                break;</span><br><span class="line">            else&#123;</span><br><span class="line">                d3 = Distance(P[i],P[j]);</span><br><span class="line">                if(d3&lt;d)    d = d3;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/09/ClosestPoint/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -986,6 +999,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">分治法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">stl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">branch and bound method</a>
               </li>
             
             <div class="clearfix"></div>

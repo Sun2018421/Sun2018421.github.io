@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="sunxiaofeng.xyz">
-  <title>Archives | 孙啸峰的博客</title>
+  <title>布线问题 | 孙啸峰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="石油大学小菜鸡">
-<meta property="og:type" content="website">
-<meta property="og:title" content="孙啸峰的博客">
-<meta property="og:url" content="sunxiaofeng.xyz/archives/page/2/index.html">
+  <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778#include &amp;lt;iostream&amp;gt;#include &amp;lt;queue&amp;gt;using">
+<meta name="keywords" content="stl,branch and bound method">
+<meta property="og:type" content="article">
+<meta property="og:title" content="布线问题">
+<meta property="og:url" content="sunxiaofeng.xyz/2019/06/12/布线问题/index.html">
 <meta property="og:site_name" content="孙啸峰的博客">
-<meta property="og:description" content="石油大学小菜鸡">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778#include &amp;lt;iostream&amp;gt;#include &amp;lt;queue&amp;gt;using">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-06-12T12:18:28.623Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="孙啸峰的博客">
-<meta name="twitter:description" content="石油大学小菜鸡">
+<meta name="twitter:title" content="布线问题">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778#include &amp;lt;iostream&amp;gt;#include &amp;lt;queue&amp;gt;using">
   
     <link rel="alternative" href="/atom.xml" title="孙啸峰的博客" type="application/atom+xml">
   
@@ -157,225 +159,169 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-布线问题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      布线问题
+    </h1>
+  
+
+        
+        <a href="/2019/06/12/布线问题/" class="archive-article-date">
+  	<time datetime="2019-06-12T12:14:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-12</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include &lt;queue&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">struct Position&#123;</span><br><span class="line">    int row ;</span><br><span class="line">    int col ;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Position offset[4] = &#123;&#123;0,1&#125;,&#123;1,0&#125;,&#123;0,-1&#125;,&#123;-1,0&#125;&#125;;</span><br><span class="line">int grid[9][9] = &#123;&#123;1,1,1,1,1,1,1,1,1&#125;,</span><br><span class="line">                  &#123;1,0,0,1,0,0,0,0,1&#125;,</span><br><span class="line">                  &#123;1,0,0,1,1,0,0,0,1&#125;,</span><br><span class="line">                  &#123;1,0,0,0,0,1,0,0,1&#125;,</span><br><span class="line">                  &#123;1,0,0,0,1,1,0,0,1&#125;,</span><br><span class="line">                  &#123;1,1,0,0,0,1,0,0,1&#125;,</span><br><span class="line">                  &#123;1,1,1,1,0,0,0,0,1&#125;,</span><br><span class="line">                  &#123;1,1,1,1,0,0,0,0,1&#125;,</span><br><span class="line">                  &#123;1,1,1,1,1,1,1,1,1,&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">bool BUXIAN(Position start , Position finish)&#123;</span><br><span class="line">    queue&lt;Position&gt; a ;</span><br><span class="line">    a.push(start);</span><br><span class="line">    Position here  , temp;</span><br><span class="line">    <span class="keyword">do</span>&#123;</span><br><span class="line">        here = a.front();</span><br><span class="line">        <span class="keyword">for</span>(int i = 0 ; i&lt; 4 ; i++)&#123;</span><br><span class="line">            temp.row = here.row + offset[i].row;</span><br><span class="line">            temp.col = here.col + offset[i].col;</span><br><span class="line">            <span class="keyword">if</span>(grid[temp.row][temp.col] == 0)&#123;</span><br><span class="line">                grid[temp.row][temp.col] = grid[here.row][here.col] + 1;</span><br><span class="line">                <span class="keyword">if</span>(temp.row == finish.row &amp;&amp; temp.col == finish.col)&#123;<span class="built_in">break</span>;&#125;</span><br><span class="line">                a.push(temp);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(temp.row == finish.row &amp;&amp; temp.col == finish.col)&#123;<span class="built_in">break</span>;&#125;</span><br><span class="line">        <span class="keyword">if</span>(a.empty())</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        a.pop();</span><br><span class="line">    &#125;<span class="keyword">while</span>(<span class="literal">true</span>);</span><br><span class="line">    int Pathlen = grid[finish.row][finish.col] - 1;</span><br><span class="line">    Position *path = new Position[Pathlen];</span><br><span class="line">    here = finish;</span><br><span class="line">    <span class="keyword">for</span>(int j  = Pathlen-1 ; j&gt;= 0 ; j--)&#123;</span><br><span class="line">        path[j] = here;</span><br><span class="line">        <span class="keyword">for</span>(int i = 0 ; i &lt; 4 ; i++)&#123;</span><br><span class="line">            temp.row = here.row+offset[i].row;</span><br><span class="line">            temp.col = here.col + offset[i].col;</span><br><span class="line">            <span class="keyword">if</span>(grid[temp.row][temp.col] == j+1)&#123;</span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        here = temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(int i = 1 ; i&lt;= 7 ; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(int j = 1 ; j&lt;= 7 ; j++)</span><br><span class="line">            cout&lt;&lt;grid[i][j]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">   cout&lt;&lt;<span class="string">"len: "</span> &lt;&lt;Pathlen&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">for</span>(int i = 0 ; i&lt;Pathlen ; i++)</span><br><span class="line">        cout&lt;&lt;path[i].row &lt;&lt;<span class="string">" "</span>&lt;&lt;path[i].col&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">   // <span class="keyword">for</span>(int i = 0 ; i&lt;4 ; i++)</span><br><span class="line">    //    cout&lt;&lt;offset[i].row &lt;&lt;<span class="string">" "</span>&lt;&lt;offset[i].col&lt;&lt;endl;</span><br><span class="line">    Position start , finish;</span><br><span class="line">    start.row = 3 ;</span><br><span class="line">    start.col = 2;</span><br><span class="line">    finish.row = 4;</span><br><span class="line">    finish.col = 6;</span><br><span class="line">    grid[start.row][start.col] = 2;</span><br><span class="line">    BUXIAN(start , finish);</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/09/ClosestPoint/" class="archive-article-date">
-  	<time datetime="2019-06-09T03:04:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/09/ClosestPoint/">最近对问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/08/MaxSum/" class="archive-article-date">
-  	<time datetime="2019-06-08T08:22:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/08/MaxSum/">MaxSum</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/08/QuickSort/" class="archive-article-date">
-  	<time datetime="2019-06-08T06:36:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/08/QuickSort/">QuickSort</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/08/MergeSort/" class="archive-article-date">
-  	<time datetime="2019-06-08T06:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/08/MergeSort/">MergeSort</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/08/RotationMatrix/" class="archive-article-date">
-  	<time datetime="2019-06-08T05:38:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/08/RotationMatrix/">RotationMatrix</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">分治法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">stl</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">branch and bound method</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http:sunxiaofeng.xyz/2019/06/12/布线问题/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/07/DivideInt/" class="archive-article-date">
-  	<time datetime="2019-06-07T10:46:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-07</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/12/Bubble/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Bubble</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/07/DivideInt/">DivideInt</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/07/perm/" class="archive-article-date">
-  	<time datetime="2019-06-07T10:08:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/07/perm/">perm</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -399,8 +345,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
