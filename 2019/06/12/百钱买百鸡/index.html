@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="sunxiaofeng.xyz">
-  <title>MergeSort | 孙啸峰的博客</title>
+  <title>百钱买百鸡 | 孙啸峰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647#include &amp;lt;iostream&amp;gt;using namespace std;int data[1001];void Merge(int r[] , int r1[] , int s , int m ,int t)&amp;#">
+  <meta name="description" content="12345678910111213141516171819202122#include &amp;lt;iostream&amp;gt;using namespace std;void Chicken()&amp;#123;    int x , y , z;    int count = 0 ;    for(x = 0 ; x &amp;lt;= 20 ; x++)&amp;#123;        for(y = 0 ; y&amp;lt">
+<meta name="keywords" content="暴力法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MergeSort">
-<meta property="og:url" content="sunxiaofeng.xyz/2019/06/08/MergeSort/index.html">
+<meta property="og:title" content="百钱买百鸡">
+<meta property="og:url" content="sunxiaofeng.xyz/2019/06/12/百钱买百鸡/index.html">
 <meta property="og:site_name" content="孙啸峰的博客">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647#include &amp;lt;iostream&amp;gt;using namespace std;int data[1001];void Merge(int r[] , int r1[] , int s , int m ,int t)&amp;#">
+<meta property="og:description" content="12345678910111213141516171819202122#include &amp;lt;iostream&amp;gt;using namespace std;void Chicken()&amp;#123;    int x , y , z;    int count = 0 ;    for(x = 0 ; x &amp;lt;= 20 ; x++)&amp;#123;        for(y = 0 ; y&amp;lt">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-08T06:21:39.388Z">
+<meta property="og:updated_time" content="2019-06-12T02:05:10.060Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MergeSort">
-<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647#include &amp;lt;iostream&amp;gt;using namespace std;int data[1001];void Merge(int r[] , int r1[] , int s , int m ,int t)&amp;#">
+<meta name="twitter:title" content="百钱买百鸡">
+<meta name="twitter:description" content="12345678910111213141516171819202122#include &amp;lt;iostream&amp;gt;using namespace std;void Chicken()&amp;#123;    int x , y , z;    int count = 0 ;    for(x = 0 ; x &amp;lt;= 20 ; x++)&amp;#123;        for(y = 0 ; y&amp;lt">
   
     <link rel="alternative" href="/atom.xml" title="孙啸峰的博客" type="application/atom+xml">
   
@@ -158,27 +159,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-MergeSort" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-百钱买百鸡" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      MergeSort
+      百钱买百鸡
     </h1>
   
 
         
-        <a href="/2019/06/08/MergeSort/" class="archive-article-date">
-  	<time datetime="2019-06-08T06:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-08</time>
+        <a href="/2019/06/12/百钱买百鸡/" class="archive-article-date">
+  	<time datetime="2019-06-12T02:04:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;iostream&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int data[1001];</span><br><span class="line">void Merge(int r[] , int r1[] , int s , int m ,int t)&#123;</span><br><span class="line">    int i = s , j = m+1 , k= s;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=m &amp;&amp; j &lt;=t)&#123;</span><br><span class="line">        <span class="keyword">if</span>(r[i] &lt;= r[j])&#123;</span><br><span class="line">            r1[k++] = r[i++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            r1[k++] = r[j++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;= m )&#123;</span><br><span class="line">        r1[k++] = r[i++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(j&lt;=t)&#123;</span><br><span class="line">        r1[k++] = r[j++];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">void MergeSort(int r[] , int s ,int t)&#123;</span><br><span class="line">    int m ;</span><br><span class="line">    int r1[1000] = &#123;0&#125;;</span><br><span class="line">    <span class="keyword">if</span>(s==t)&#123;</span><br><span class="line">        <span class="built_in">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        m = (s+t)/2;</span><br><span class="line">        MergeSort(r,s,m);</span><br><span class="line">        MergeSort(r,m+1,t);</span><br><span class="line">        Merge(r , r1 , s , m , t);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(int i = s ; i&lt;= t ;i++)</span><br><span class="line">        r[i] = r1[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">    int n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(int i = 1 ; i&lt;=n ; i++)</span><br><span class="line">        cin&gt;&gt;data[i];</span><br><span class="line">    MergeSort(data,1,n);</span><br><span class="line">    <span class="keyword">for</span>(int i = 1 ; i&lt;= n ; i++)</span><br><span class="line">            cout&lt;&lt;data[i]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">return</span> 0 ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;iostream&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">Chicken</span></span>()&#123;</span><br><span class="line">    int x , y , z;</span><br><span class="line">    int count = 0 ;</span><br><span class="line">    <span class="keyword">for</span>(x = 0 ; x &lt;= 20 ; x++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(y = 0 ; y&lt;= 33 ; y++)&#123;</span><br><span class="line">            z = 100 - x-  y ;</span><br><span class="line">            <span class="keyword">if</span>((z%3 ==0)&amp;&amp;(5*x+3*y+z/3) == 100)&#123;</span><br><span class="line">                count ++;</span><br><span class="line">                cout&lt;&lt;<span class="string">"公鸡: "</span>&lt;&lt;x &lt;&lt;<span class="string">" 母鸡: "</span>&lt;&lt;y&lt;&lt;<span class="string">" 小鸡: "</span>&lt;&lt;z&lt;&lt;endl;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(count == 0)</span><br><span class="line">        cout&lt;&lt;<span class="string">"问题无解"</span> &lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">    Chicken();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -209,6 +210,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">暴力法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -259,7 +271,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:sunxiaofeng.xyz/2019/06/08/MergeSort/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:sunxiaofeng.xyz/2019/06/12/百钱买百鸡/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -273,18 +285,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/06/08/QuickSort/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          QuickSort
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/06/08/RotationMatrix/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">RotationMatrix</div>
+    <a href="/2019/06/11/PrimeCicle/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PrimeCicle</div>
       <i class="icon-circle-right"></i>
     </a>
   
