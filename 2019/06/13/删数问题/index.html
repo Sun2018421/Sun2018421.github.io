@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="sunxiaofeng.xyz">
-  <title>最优二叉查找树 | 孙啸峰的博客</title>
+  <title>删数问题 | 孙啸峰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345678910111213141516171819202122232425262728double OptimalBST(double p[] , int n)&amp;#123;    int i , j , k , d ;    int min , mink , sum;    for(i = 1 ; i&amp;lt;= n; i++)&amp;#123;   //初始化主对角线和第一条次对角线">
-<meta name="keywords" content="dp">
+  <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940#include &amp;lt;iostream&amp;gt;   //附上山东理工OJ链接:https://acm.sdut.edu.cn/onlinejudge2/index.php/Home/Index/problemdetail/pid/1753.html#in">
+<meta name="keywords" content="贪心">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最优二叉查找树">
-<meta property="og:url" content="sunxiaofeng.xyz/2019/06/09/OptimalBST/index.html">
+<meta property="og:title" content="删数问题">
+<meta property="og:url" content="sunxiaofeng.xyz/2019/06/13/删数问题/index.html">
 <meta property="og:site_name" content="孙啸峰的博客">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728double OptimalBST(double p[] , int n)&amp;#123;    int i , j , k , d ;    int min , mink , sum;    for(i = 1 ; i&amp;lt;= n; i++)&amp;#123;   //初始化主对角线和第一条次对角线">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940#include &amp;lt;iostream&amp;gt;   //附上山东理工OJ链接:https://acm.sdut.edu.cn/onlinejudge2/index.php/Home/Index/problemdetail/pid/1753.html#in">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-09T14:05:19.851Z">
+<meta property="og:updated_time" content="2019-06-13T00:32:46.672Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="最优二叉查找树">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728double OptimalBST(double p[] , int n)&amp;#123;    int i , j , k , d ;    int min , mink , sum;    for(i = 1 ; i&amp;lt;= n; i++)&amp;#123;   //初始化主对角线和第一条次对角线">
+<meta name="twitter:title" content="删数问题">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940#include &amp;lt;iostream&amp;gt;   //附上山东理工OJ链接:https://acm.sdut.edu.cn/onlinejudge2/index.php/Home/Index/problemdetail/pid/1753.html#in">
   
     <link rel="alternative" href="/atom.xml" title="孙啸峰的博客" type="application/atom+xml">
   
@@ -159,27 +159,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-OptimalBST" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-删数问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      最优二叉查找树
+      删数问题
     </h1>
   
 
         
-        <a href="/2019/06/09/OptimalBST/" class="archive-article-date">
-  	<time datetime="2019-06-09T14:04:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-09</time>
+        <a href="/2019/06/13/删数问题/" class="archive-article-date">
+  	<time datetime="2019-06-13T00:29:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">double OptimalBST(double p[] , int n)&#123;</span><br><span class="line">    int i , j , k , d ;</span><br><span class="line">    int min , mink , sum;</span><br><span class="line">    <span class="keyword">for</span>(i = 1 ; i&lt;= n; i++)&#123;   //初始化主对角线和第一条次对角线</span><br><span class="line">        C[i][i-1] = 0;     //C[n+1][n+1] , R[n+1][n+1]为全局变量</span><br><span class="line">        C[i][i] = p[i-1];   //第i个元素的查找概论存储在p[i-1]处</span><br><span class="line">        R[i][i] =  i ;</span><br><span class="line">    &#125;</span><br><span class="line">    C[n+1][n] = 0 ;</span><br><span class="line">    <span class="keyword">for</span>( d = 1 ; d&lt; n ; d++)&#123;       //按对角线逐条计算</span><br><span class="line">        <span class="keyword">for</span>(i = 1 ; i&lt;= n -d ; i++)&#123;</span><br><span class="line">            j = i+d ;</span><br><span class="line">            min = 1000 ;  //假设1000为最大值</span><br><span class="line">            mink = i ;</span><br><span class="line">            sum = 0 ;</span><br><span class="line">            <span class="keyword">for</span>(k = i ; k&lt;= j ; k++)&#123;</span><br><span class="line">                sum = sum + p[k-1];   //注意数组下标从0开始</span><br><span class="line">                <span class="keyword">if</span>(C[i][k-1] + C[k+1][k] &lt;min)&#123;</span><br><span class="line">                    min = C[i][k-1] + C[k+1][j];</span><br><span class="line">                    min = k ;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            C[i][j] = min+sum;</span><br><span class="line">            R[i][j] = mink;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> C[1][n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;iostream&gt;   //附上山东理工OJ链接:https://acm.sdut.edu.cn/onlinejudge2/index.php/Home/Index/problemdetail/pid/1753.html</span></span><br><span class="line"><span class="comment">#include &lt;queue&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;string.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">    char a[105];</span><br><span class="line">    int k , len  , t;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">"%s %d"</span>,a,&amp;k)!=EOF)&#123;</span><br><span class="line">        len = strlen(a);</span><br><span class="line">        t = k ;</span><br><span class="line">        <span class="keyword">if</span>(t&gt;=len)&#123;</span><br><span class="line">            cout&lt;&lt;0&lt;&lt;endl;</span><br><span class="line">            <span class="built_in">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        int i = 0 , j ;</span><br><span class="line">        <span class="keyword">while</span>(t)&#123;</span><br><span class="line">            i = 0 ;</span><br><span class="line">            <span class="keyword">while</span>( i&lt; len &amp;&amp; a[i]&lt;=a[i+1])</span><br><span class="line">                i++;</span><br><span class="line">            <span class="keyword">for</span>( j = i ; j&lt;len ;j++)</span><br><span class="line">                a[j] = a[j+1];</span><br><span class="line">            t--;</span><br><span class="line">        &#125;</span><br><span class="line">        i = 0 ;</span><br><span class="line">        <span class="keyword">while</span>(a[i] == <span class="string">'0'</span>)</span><br><span class="line">            i++;</span><br><span class="line">        <span class="keyword">if</span>( i== len - k)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"0\n"</span>);</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">for</span>( j = i ; j&lt; len-k ; j++)</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%c"</span>,a[j]);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br><span class="line">//贪心算法:就是从头找递减序列，当有递减序列时删除最开始大的元素，因为多开空间所以单调不见序列最后元素会被删除.(像CSDN上前辈学习)</span><br></pre></td></tr></table></figure>
       
 
       
@@ -213,7 +213,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">dp</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">贪心</a>
         		</li>
       		
 		</ul>
@@ -269,7 +269,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:sunxiaofeng.xyz/2019/06/09/OptimalBST/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:sunxiaofeng.xyz/2019/06/13/删数问题/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -283,18 +283,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/06/11/PrimeCicle/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          PrimeCicle
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/06/09/Floyd/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Floyd</div>
+    <a href="/2019/06/12/布线问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">布线问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
