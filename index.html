@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xiaofeng Sun - Homepage</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20260913-refined">
 </head>
 <body>
 
@@ -13,15 +13,14 @@
     </header>
 
     <div class="container">
-        <nav class="sidebar">
+        <nav class="sidebar" aria-label="Main navigation">
             <ul>
-                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#home" class="active" aria-current="location">Home</a></li>
                 <li><a href="#news">News</a></li>
                 <li><a href="#research">Research</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#awards">Awards</a></li>
-                <li><a href="[Your CV file link here]" target="_blank">CV</a></li>
             </ul>
         </nav>
 
@@ -30,7 +29,7 @@
                 <img src="profile.jpg" alt="Photo of Xiaofeng Sun" class="profile-photo">
                 <div class="contact-info">
                     <p><strong>Xiaofeng Sun (孙啸峰)</strong></p>
-                    <p>Ph.D. Candidate</p>
+                    <p>Ph.D. Student</p>
                     <p>College of Computer Science and Technology</p>
                     <p>Zhejiang University, Hangzhou</p>
                     <p>Email: sunxf [at] zju [dot] edu [dot] cn</p>
@@ -44,50 +43,75 @@
             </section>
 
             <section id="about">
-                <h2>About me</h2>
+                <h2>About Me</h2>
                 <p>
-                    I am currently a Ph.D. candidate at the College of Computer Science and Technology, Zhejiang University, supervised by <a href="https://www.zhejianglab.org/person?pid=290&id=379&bannerId=191" target="_blank">Dr. hongyang Chen</a> .  Previously, I completed my Bachelor's and Master's degrees in Computer Science and Technology at China University of Petroleum (Beijing), where I was admitted to the integrated Bachelor-Master program with a ranking of 2/119. 
+                    I am currently a Ph.D. student at the College of Computer Science and Technology, Zhejiang University, supervised by <a href="https://scholar.google.com/citations?user=s-HDT8UAAAAJ&amp;hl=en" target="_blank">Dr. Hongyang Chen</a>. Previously, I completed my Bachelor's and Master's degrees in Computer Science and Technology at China University of Petroleum (Beijing). Please feel free to contact me.
                 </p>
 
             </section>
-            
+
             <section id="news">
                 <h2>News</h2>
                 <ul class="news-list">
-                    <li>Good News is cooming soon~</li>
+                    <li>Our paper on the gradient geometry of long CoT has been accepted to <a href="#publications">ICML 2026</a>!</li>
                 </ul>
             </section>
-            
+
             <section id="research">
                 <h2>Research Interests</h2>
                 <p>
-                    My research interests primarily lie in <strong>Large Language Model Optimization</strong>, <strong>Deep Learning Systems</strong>, and <strong>Efficient Model Inference</strong>. I am dedicated to addressing the performance and memory bottlenecks in AI model training and inference through algorithm-system co-design. I possess strong communication and teamwork skills, can independently analyze and solve problems, and have a keen interest in deep and challenging work. 
+                    My research interests primarily lie in <strong>Large Language Model Optimization</strong>, <strong>Deep Learning Systems</strong>, and <strong>Efficient Model Inference</strong>. I am dedicated to addressing the performance and memory bottlenecks in AI model training and inference through algorithm-system co-design.
                 </p>
             </section>
 
             <section id="publications">
                 <h2>Publications</h2>
                 <ul class="publications-list">
-                    <li>
-                        <b>Minimizing memory footprints for inference on IoTs devices by efficient rematerialization</b> <br>
-                        <u>Xiaofeng Sun</u>, etc.<br>
-                        <i>Published in the Proceedings of ICIC 2023 (CCF-C).</i> 
+                    <li class="publication-entry">
+                        <img src="assets/zjulogo-paper.png" alt="Zhejiang University logo" class="publication-logo" width="40" height="40">
+                        <div class="publication-body">
+                            <h3>Uncovering the Gradient Geometry of Long CoT: A Spectral-guided Approach to Reasoning Distillation</h3>
+                            <p class="publication-authors"><span class="author-self">Xiaofeng Sun</span> (second author).</p>
+                            <p class="publication-venue">ICML 2026 <span class="publication-rank">(CCF-A)</span></p>
+                        </div>
                     </li>
-                     <li>
-                        <b>MEHTA: A Memory-Efficient Optimizer for Transformers with
-Hessian Trace Acceleration </b><br>
-                        <u>Xiaofeng Sun</u>, etc.<br>
-                        <i>Manuscript in preparation, to be submitted soon.</i> 
+                    <li class="publication-entry">
+                        <img src="assets/cupb-logo.png" alt="China University of Petroleum logo" class="publication-logo" width="40" height="40">
+                        <div class="publication-body">
+                            <h3>Minimizing memory footprints for inference on IoTs devices by efficient rematerialization</h3>
+                            <p class="publication-authors"><span class="author-self">Xiaofeng Sun</span>, etc.</p>
+                            <p class="publication-venue">ICIC 2023 <span class="publication-rank">(CCF-C)</span></p>
+                        </div>
+                    </li>
+                    <li class="publication-entry">
+                        <div class="publication-body">
+                            <h3>MEHTA: A Memory-Efficient Optimizer for Transformers with Hessian Trace Acceleration</h3>
+                            <p class="publication-authors"><span class="author-self">Xiaofeng Sun</span>, etc.</p>
+                            <p class="publication-status">Manuscript in preparation.</p>
+                        </div>
                     </li>
                 </ul>
             </section>
-            
+
             <section id="experience">
                 <h2>Internship & Project Experience</h2>
                 <ul class="experience-list">
                     <li>
-                        <b>Project: National Key R&D Program of China</b> (Oct. 2022 - Sep. 2025)
-                        <br><em>Key Technologies for AI Large Model Framework Optimization Based on Memory Pooling</em>
+                        <div class="experience-heading">
+                            <img src="assets/huawei-logo.png" alt="Huawei logo" class="experience-logo" width="92" height="38">
+                            <span><b>Huawei Technologies Co., Ltd.</b> (Dec. 2025 - Jun. 2026)</span>
+                        </div>
+                        <em>Research Intern · Project Lead, Cross-Prompt Inference Acceleration for Diffusion Models</em>
+                        <br>Mentor: <a href="https://yxkyong.github.io/" target="_blank" rel="noopener noreferrer">Dr. Xuanke You</a>
+                        <br><b>Mitigating Instance-Specific Bias in Cross-Prompt Diffusion Reuse with Adaptive Multi-Latent Fusion</b>
+                        <br><i>Under review.</i>
+                    </li>
+                    <li>
+                        <div class="experience-heading">
+                            <img src="assets/zjlab-wordmark.png" alt="Zhejiang Lab logo" class="experience-logo" width="92" height="38">
+                            <span><b>Project: National Key R&D Program of China</b> (Oct. 2022 - Sep. 2025)</span>
+                        </div>
+                        <em>Key Technologies for AI Large Model Framework Optimization Based on Memory Pooling</em>
                     </li>
                 </ul>
             </section>
@@ -104,5 +128,6 @@ Hessian Trace Acceleration </b><br>
         </main>
     </div>
 
+    <script src="navigation.js?v=20260913-refined" defer></script>
 </body>
 </html>
