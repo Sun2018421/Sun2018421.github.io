@@ -90,6 +90,23 @@ body::before {
 .sidebar a:hover { color: #fff1ba; background: #38594b; text-decoration: none; }
 .sidebar a:focus-visible { outline: 3px solid #ffe4a0; outline-offset: 4px; }
 
+.view-counter {
+    margin-top: 24px;
+    padding: 10px 12px;
+    border: 2px solid #21383d;
+    background: rgba(29,57,60,.94);
+    box-shadow: inset 1px 1px 0 #66867b, 3px 3px 0 rgba(15,29,43,.4);
+    color: #edf6e9;
+}
+.view-counter-label { display: block; font-size: 11px; color: #cddcc8; }
+.view-counter-total { font-family: ui-monospace, monospace; font-size: 22px; line-height: 1.6; color: #fff1ba; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.view-counter-status { display: block; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 13px; line-height: 1.6; color: #d9e5d6; }
+.view-counter-status[hidden] { display: none; }
+@media (max-width: 760px) {
+    .view-counter { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin-top: 18px; padding: 7px 10px; width: fit-content; max-width: 100%; }
+    .view-counter-total { font-size: 18px; }
+}
+
 /* Pixel frame with a calm, high-contrast reading surface. No text opacity. */
 .content {
     flex: 1;
@@ -135,6 +152,25 @@ h2 {
 .publication-authors, .publication-status { color: #4b5c52; }
 .author-self { text-decoration: underline; text-decoration-color: #839585; text-underline-offset: 3px; }
 .publication-venue { color: #226548; font-weight: 600; }
+/* Small, static conference badges; the venue text carries the meaning. */
+.publication-body .publication-venue {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px 8px;
+    margin-top: 5px;
+}
+.achievement-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 1px 6px;
+    border: 1px solid #bdc9a9;
+    background: #edf1df;
+    box-shadow: inset 1px 1px 0 #fffdf0;
+    white-space: nowrap;
+}
+.achievement-badge img { width: 16px; height: 16px; flex: 0 0 16px; image-rendering: pixelated; }
 .publication-rank { font-weight: 400; }
 .publication-status { font-style: italic; }
 
